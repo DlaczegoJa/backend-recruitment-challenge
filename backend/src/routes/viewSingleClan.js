@@ -2,7 +2,7 @@ import gotdb from '../server/queries';
 
 const singleClanRoute = (req, res)=> {
   const surname = req.params.surname;
-  gotdb.query('SELECT DISTINCT surname, name FROM members WHERE surname=$1 ORDER BY name ASC', [surname], (error, results)=> {
+  gotdb.query('select name,surname from members where surname=$1 group by name,surname', [surname], (error, results)=> {
     if (error) {
       throw error;
     }

@@ -1,7 +1,7 @@
 import gotdb from '../server/queries';
 
 const allClansRoute = (req, res)=> {
-  gotdb.query('Select * FROM clans order by surname', (error, results)=> {
+  gotdb.query('select surname from clans group by surname;', (error, results)=> {
     if (error) {
       throw error;
     }
