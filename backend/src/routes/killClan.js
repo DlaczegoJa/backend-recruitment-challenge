@@ -2,7 +2,7 @@ import gotdb from '../server/queries';
 
 const killClanRoute = (req, res)=> {
   const surname = req.params.name;
-  gotdb.query('delete from clans where surname=$1', [surname], (error,results)=> {
+  gotdb.query('delete from clans where surname=$1', [surname], (error, results)=> {
     if (error) {
       throw error;
     }
