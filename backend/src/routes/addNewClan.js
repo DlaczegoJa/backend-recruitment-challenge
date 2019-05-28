@@ -4,7 +4,7 @@ const newClanRoute = (req, res)=> {
   const Joi = require('joi');
   const { surname } = req.body;
   const schema = Joi.object().keys({
-    surname: Joi.string().required()
+    surname: Joi.string().max(30).required()
   });
   Joi.validate(surname, schema, (error, value)=> {
     const id = Math.ceil(Math.random() * 99999);
