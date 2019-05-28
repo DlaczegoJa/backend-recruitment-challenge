@@ -6,7 +6,7 @@ const newClanRoute = (req, res)=> {
   const schema = Joi.object().keys({
     surname: Joi.string().max(30).required()
   });
-  Joi.validate(surname, schema, (error, value)=> {
+  Joi.validate(req.body, schema, (error, value)=> {
     const id = Math.ceil(Math.random() * 99999);
     if (error) {
       res.status(422).json({
@@ -19,7 +19,7 @@ const newClanRoute = (req, res)=> {
       res.json({
         status: 'success',
         message: 'Ok',
-        surname: Object.assign({ id }, value)
+        surname: Object.assign(value)
       });
     }
   }
