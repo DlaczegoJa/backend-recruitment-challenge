@@ -5,7 +5,7 @@ const allClansRoute = (req, res)=> {
     if (error) {
       throw error;
     }
-    res.status(200).json({result: results.rows});
+    res.status(200).json({ result: results.rows });
   });
 };
 
