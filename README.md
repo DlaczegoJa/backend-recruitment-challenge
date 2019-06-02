@@ -72,3 +72,20 @@ In the final step, you should choose a place where data will be stored. You can 
 4) use Postman or other client for test server. Ping endpoint details - method: GET url: http://localhost:3999/api/v1/ping
 
 # Good luck!
+
+### Done:
+1) Added files for each endpoint.
+2) Downloaded pg and joi.
+3) Downloaded psql.
+4) Setup a database in psql.
+5) Added file queries.js containing data for database connection.
+6) Added api routes into index.js.
+7) Added validation to 5 out of 6 endpoints. Endpoint listing all clans and members didn't require a validation because of lack of any user input.
+8) Exported database with pg_dump -U lixxir GoTAPI > dbexport.pgqsl
+
+## To run application:
+1) Run the command make install to install the required packages
+2) Check if psql is installed
+3) Create user lixxir with a password 'xxx'
+4) Import database into psql with psql -U lixxir GoTAPI < dbexport.pgsql
+5) Run the command 'make run' to start the application.
